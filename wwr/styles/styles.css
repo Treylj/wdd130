@@ -1,3 +1,18 @@
+.logo img {
+    width: 100px; /* Adjust this value to make the logo smaller */
+    height: auto; /* Maintain aspect ratio */
+    display: inline-block; /* Keep it inline with the menu */
+    vertical-align: middle; /* Align it vertically with the menu items */
+}
+
+header {
+    display: flex; /* Use flexbox to align items */
+    justify-content: space-between; /* Space between logo and menu */
+    align-items: center; /* Center items vertically */
+    padding: 15px;
+}
+
+
 body {
     font-family: Arial, sans-serif;
     max-width: 1600px; /* Set max-width of the page */
@@ -7,7 +22,7 @@ body {
 }
 
 header {
-    background-color: #005f73; /* Header background color */
+    background-color: #003c48; /* Header background color */
     color: white;
     padding: 15px;
 }
@@ -32,7 +47,7 @@ nav a:hover {
 }
 
 .hero-banner {
-    background-color: #3a0ca3; /* Hero banner background color */
+    background-color: #153487; /* Hero banner background color */
     color: white;
     text-align: center;
     padding: 40px 0;
