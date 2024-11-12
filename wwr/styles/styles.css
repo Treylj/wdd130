@@ -1,49 +1,58 @@
-/* Reset some default browser styles */
 body, h1, h2, h3, p, ul {
     margin: 0;
     padding: 0;
 }
 
-/* Body styling */
 body {
-    font-family: 'Arial', sans-serif; /* Change body font */
+    font-family: 'Arial', sans-serif;
     line-height: 1.6;
-    background-color: #f8f8f8; /* Light background for contrast */
+    background-color: #f8f8f8;
     padding: 20px;
 }
 
-/* Header styling */
 header {
-    background-color: #004d00; /* Dark green background */
-    color: white; /* Ensure text is legible */
+    display: grid;
+    grid-template-columns: 150px auto;
+    grid-gap: 20px;
+    background-color: #003366;
+    color: white;
     padding: 20px;
-    display: flex;
-    justify-content: space-between;
     align-items: center;
 }
 
 .logo img {
-    height: 50px; /* Adjust logo size */
+    height: 50px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
 }
 
 nav ul {
     list-style-type: none;
     display: flex;
+    gap: 20px;
 }
 
 nav ul li {
-    margin-left: 20px;
+    margin-left: 0;
 }
 
 nav ul li a {
-    color: white; /* Ensure link text is legible */
+    color: white;
     text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
 }
 
-/* Hero banner styling */
+nav ul li a:hover {
+    color: #ffcc00;
+}
+
 .hero-banner {
-    background-color: #007f00; /* Slightly lighter green */
-    color: white; /* Ensure text is legible */
+    background-color: #005b99;
+    color: white;
     text-align: center;
     padding: 40px 20px;
     border-radius: 10px;
@@ -51,75 +60,74 @@ nav ul li a {
 }
 
 .hero-banner h1 {
-    font-size: 2.5em; /* Larger headline */
+    font-size: 2.5em;
 }
 
 .hero-banner p {
-    font-size: 1.2em; /* Adjusted font size */
+    font-size: 1.2em;
 }
 
-/* Cards section styling */
 .cards {
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
     margin-bottom: 20px;
 }
 
 .card {
-    background-color: white; /* White background for contrast */
-    border: 2px solid #007f00; /* Green border */
+    background-color: white;
+    border: 2px solid #005b99;
     border-radius: 10px;
     padding: 20px;
-    width: 30%; /* Adjust width */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
-    transition: transform 0.2s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .card:hover {
-    transform: scale(1.05); /* Scale effect on hover */
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .card h2 {
-    font-size: 1.5em; /* Card title size */
-    color: #007f00; /* Ensure title text is legible */
+    font-size: 1.5em;
+    color: #005b99;
 }
 
 .card p {
-    font-size: 1em; /* Card paragraph size */
+    font-size: 1em;
 }
 
-/* Main image section styling */
 .main-image {
     text-align: center;
     margin-bottom: 20px;
 }
 
 .main-image img {
-    max-width: 100%; /* Responsive image */
-    border-radius: 10px; /* Rounded edges */
+    max-width: 100%;
+    border-radius: 10px;
 }
 
 .main-image h2 {
-    font-size: 2em; /* Headline size */
+    font-size: 2em;
     margin-top: 10px;
-    color: #007f00; /* Ensure headline text is legible */
+    color: #005b99;
 }
 
 .main-image p {
-    font-size: 1.1em; /* Adjusted paragraph size */
-    color: #333; /* Darker text for contrast */
+    font-size: 1.1em;
+    color: #333;
 }
 
-/* Footer styling */
 footer {
-    background-color: #004d00; /* Dark green background */
-    color: white; /* Ensure text is legible */
+    background-color: #003366;
+    color: white;
     padding: 20px;
     text-align: center;
 }
 
 .social-media ul {
     list-style-type: none;
+    margin-bottom: 10px;
 }
 
 .social-media ul li {
@@ -128,10 +136,98 @@ footer {
 }
 
 .social-media ul li a {
-    color: white; /* Ensure link text is legible */
+    color: white;
     text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-media ul li a:hover {
+    color: #ffcc00;
 }
 
 .footer-content p {
     margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+    header {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        margin-top: 20px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .hero-banner h1 {
+        font-size: 2em;
+    }
+
+    .main-image h2 {
+        font-size: 1.8em;
+    }
+
+    .main-image p {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 15px;
+    }
+
+    .hero-banner {
+        padding: 30px 15px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .main-image h2 {
+        font-size: 1.5em;
+    }
+
+    .main-image p {
+        font-size: 0.95em;
+    }
+}
+
+#logo_link {
+    padding-top: 5px;
+    justify-self: center;
+    align-self: center;
+}
+
+#hero {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+}
+
+#hero-box {
+    grid-column: 1/4;
+    grid-row: 1/3;
+    z-index: -1;
+}
+
+#hero-msg h4 {
+    color: white;
+}
+
+#hero {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    margin-top: -100px;
+}
+
+#hero-msg {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    margin-top: 100px;
 }
